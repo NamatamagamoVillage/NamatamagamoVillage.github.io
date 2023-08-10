@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>なまたまがも村MCサーバー</title>
+    <!-- リセットCSSの取得 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ress@4.0.0/dist/ress.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+</head>
+
+<style>
+    /* フォントをGoogleFontsから取得 */
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+    /* スライドショー */
+    @keyframes picsl {
+        0% {
+            background-image: url("files/img/top1.png");
+        }
+        33% {
+            background-image: url("files/img/top2.png");
+        }
+        66% {
+            background-image: url("files/img/top3.png");
+        }
+        100% {
+            background-image: url("files/img/top1.png");
+        }
+    }
+    @keyframes picsld {
+        0% {
+            background-image: url("files/img/top1d.png");
+        }
+        33% {
+            background-image: url("files/img/top2d.png");
+        }
+        66% {
+            background-image: url("files/img/top3d.png");
+        }
+        100% {
+            background-image: url("files/img/top1d.png");
+        }
+    }
+    /* フォント変更 */
+    body {
+        background-color: black;
+        padding: 0%;
+        font-family: 'Roboto', 'Noto Sans JP';
+    }
+    /* aタグの装飾 */
+    a {
+        color: skyblue;
+        text-decoration: none;
+    }
+    /* テーブルの枠線 */
+    table {
+        border-collapse: collapse;
+    }
+    /* ナビゲーションバー */
+    .nav {
+        text-align: center;
+        position: fixed;
+        width: 100%;
+        background-color: #454545;
+        padding: 5px;
+        z-index: 1000000;
+    }
+    /* 上下移動ナビゲーション */
+    .nav-b {
+        position: fixed;
+        bottom:25%;
+        right: 2%;
+        width: 25px;
+        color: black;
+        z-index: 10000;
+    }
+    /* ヘッダー */
+    .top {
+        background-color: #454545;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        text-align: center;
+        color: whitesmoke;
+        padding: 10%;
+        position: relative;
+        animation-name: picsl;
+        animation-duration: 6s;
+        animation-iteration-count: infinite;
+    }
+    /* 最下部のやつ */
+    .bottom {
+        background-color: #454545;
+        text-align: center;
+        color: white;
+        padding: 4%;
+    }
+    /* 整える */
+    .list {
+        background-color: white;
+        padding: 4%;
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+    /* 整える */
+    .content {
+        background-color: white;
+        padding: 4%;
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+    /* ホバーしてないときのナビゲーションバーの色 */
+    .color-a {
+        color: rgb(165, 165, 165);
+    }
+    /* ホバー時の表示 */
+    .color-a:hover {
+        color: rgb(247, 247, 247);
+    }
+    /* ホバーしてないときのナビゲーションバーの色 */
+    .color-b {
+        fill: black;
+        stroke: black;
+    }
+    /* ホバー時の表示 */
+    .color-b:hover {
+        fill: rgb(207, 207, 207);
+        stroke: rgb(207, 207, 207);
+    }
+    /* タイトルの色 */
+    .ttext {
+        text-align: center;
+        height: 50px;
+        text-shadow: 3px 3px 4px black ;
+    }
+    /* アンダーライン */
+    .under {
+        border-bottom:1px solid;
+    }
+    /* ダークモード対応 */
+    @media (prefers-color-scheme: dark) {
+        .top {
+        animation-name: picsld;
+        animation-duration: 6s;
+        animation-iteration-count: infinite;
+        }
+        .list {
+            background-color: #000;
+            color: #fff;
+        }
+        .content {
+            background-color: #000;
+            color: #fff;
+        }
+        .csd {
+            filter: invert(100%);
+        }
+    }
+
+</style>
+
+<body>
+    <!-- 上部ナビゲーション -->
+    <div class="nav">
+        <a href="#list" class="color-a">目次</a>
+        <a href="#open" class="color-a">概要</a>
+        <a href="#content1" class="color-a">サーバーメンバーから一言</a>
+        <a href="#content2" class="color-a">Discordサーバー情報</a>
+        <a href="#content3" class="color-a"></a>
+        <a href="#content4" class="color-a"></a>
+    </div>
+    <!-- 上下ナビゲーション -->
+    <div class="nav-b">
+        <a href="#top" class="color-b"><svg troke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="h-32 w-32 [color]-$fill-color" style="stroke-width: var(--grid-item-icon-stroke-width); transform: scale(var(--grid-item-icon-scale));"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75L12 3m0 0l3.75 3.75M12 3v18"></path></svg></a>
+        <br>
+        <a href="#bottom" class="color-b"><svg stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="h-32 w-32 [color]-$fill-color" style="stroke-width: var(--grid-item-icon-stroke-width); transform: scale(var(--grid-item-icon-scale));"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25L12 21m0 0l-3.75-3.75M12 21V3"></path></svg></a>
+    </div>
+    <!-- ヘッダー -->
+    <div class="top" id="top">
+        <h1 class="ttext">なまたまがも村MCサーバー</h1>
+    </div>
+    <!-- 目次 -->
+    <div class="list" id="list">
+        <h2 class="under">目次</h2>
+        <br>
+        <a href="#open">概要</a>
+        <br>
+        <a href="#content1">歴史</a>
+        <br>
+        <a href="#content2">サーバーメンバーから一言</a>
+        <br>
+        <a href="#content3">Discordサーバー情報</a>
+        <br>
+        <a href="#content4"></a>
+    </div>
+    <!-- 概要 -->
+    <div class="content" id="open">
+        <h2 class="under">概要</h2>
+        <br>
+        <p>
+            なまたまがも村MCサーバー現在Java版とBedrock版とのクロスプレイ対応のクリエイティブサーバーとなっております。
+            <br>
+            市役所(x381y927z35)の中にあるコマンドブロックを使うとサバイバルワールドにも行けます。
+        </p>
+    </div>
+    <!-- 歴史 -->
+    <div class="content" id="content1">
+        <h2 class="under">歴史</h2>
+        <br>
+        <h3>2022年</h3>
+        <p>
+            毎日がエブリデイがconohaを使ってエビ村を再始動(以前になまたまがもがYouTube企画用に運営したいた)
+            <br>
+            名前をなまたまがも村に変更
+            <br>
+            常時オープンに変更
+        </p>
+        <br>
+        <h3>2023年</h3>
+        <p>
+            サーバーを再契約
+            <br>
+            サーバーソフトウェアを破壊＆再構築
+            <br>
+            クロスプレイ対応化メンテ
+            <br>
+            Discordとの連携を強化
+        </p>
+    </div>
+    <!-- 鯖メン一言 -->
+    <div class="content" id="content2">
+        <h2 class="under">サーバーメンバーから一言</h2>
+        <br>
+        <table>
+            <tr>
+                <td>毎日がエブリデイ(サーバーオーナー)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><img src="./files/img/sm1.jpg" alt="毎エブアイコン" width="150px"></td>
+                <td>どーも！鯖主の毎日がエブリデイです。結構ここはみんなフレンドリーで、仲良くやってます！入るかどうか迷ったら、取り合えずDiscordに入ってみてください！多分気に入ってもらえると思いますよ！(=´∀｀)人(´∀｀=)ナカーマ</td>
+            </tr>
+            <tr>
+                <td>chainsawsteel1(サーバーメンテナ)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><img src="./files/img/sm2.png" alt="chAInsアイコン" class="csd" width="150px"></td>
+                <td>このサーバーのメンテナンスを行ってます。なんの予告もなくサーバーが落ちる可能性があるので注意してください。</td>
+            </tr>
+        </table>
+    </div>
+    <!-- DS -->
+    <div class="content" id="content3">
+        <h2 class="under">Discordサーバー情報</h2>
+        <br>
+        <h3>招待リンク</h3>
+        <a href="https://discord.gg/Mdy3rcuqx6">https://discord.gg/Mdy3rcuqx6</a>
+        <br><br>
+        <h3>オンライン状況</h3>
+        <iframe src="https://discordapp.com/widget?id=1014513143935930429&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+    </div>
+    <!--  -->
+    <div class="content" id="content4">
+        <h2 class="under"></h2>
+        <br>
+
+    </div>
+    <!-- 最低面 -->
+    <div class="bottom" id="bottom">
+        <p class="btext">なまたまがも村スタッフ</p>
+        <p class="btext"><a href="https://sites.google.com/view/namatamagamovillage/" target="_blank">旧サイト</a></p>
+    </div>
+
+</body>
+
+</html>
