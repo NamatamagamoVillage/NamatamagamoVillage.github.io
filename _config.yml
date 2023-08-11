@@ -2,4 +2,3 @@ repository: NamatamagamoVillage/NamatamagamoVillage.github.io
 
 url: "https://namatamagamovillage.github.io/" 
 plugins:
- - jekyll-seo-tag
